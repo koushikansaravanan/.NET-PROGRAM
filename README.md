@@ -264,5 +264,29 @@ Public Class Form1
 
 End Class
 
+**Student details**
+
+Public Class Form1
+    Private Sub Button1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button1.Click
+        Dim student As String
+        student = ",Reg No: " & TextBox1.Text
+        student &= ", Name: " & TextBox2.Text
+        student &= ", Dept: " & TextBox3.Text
+        student &= ", Year: " & TextBox4.Text
+        ListBox1.Items.Add(student)
+        MessageBox.Show("Student details added successfully")
+    End Sub
+    Private Sub Button2_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button2.Click
+        TextBox1.Clear()
+        TextBox2.Clear()
+        TextBox3.Clear()
+        TextBox4.Clear()
+        TextBox1.Focus()
+    End Sub
+    Private Sub Button3_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Button3.Click
+        End
+    End Sub
+End Class
+
 
 
