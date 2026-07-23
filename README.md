@@ -234,4 +234,35 @@ Public Class Form1
 End Class
 
 
+**notepad**
+
+Imports System.IO
+
+Public Class Form1
+
+    Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
+        RichTextBox1.Clear()
+    End Sub
+
+    Private Sub OpenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
+        OpenFileDialog1.Filter = "Text Files (*.txt)|*.txt"
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+            RichTextBox1.Text = File.ReadAllText(OpenFileDialog1.FileName)
+        End If
+    End Sub
+
+    Private Sub SaveToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
+        SaveFileDialog1.Filter = "Text Files (*.txt)|*.txt"
+        If SaveFileDialog1.ShowDialog() = DialogResult.OK Then
+            File.WriteAllText(SaveFileDialog1.FileName, RichTextBox1.Text)
+        End If
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        End
+    End Sub
+
+End Class
+
+
 
