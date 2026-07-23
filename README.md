@@ -157,3 +157,35 @@ Public Class Form1
 End Class
 
 
+**digital clock**
+
+Public Class Form1
+
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Label3.Text = "digital clock"
+        Label1.Text = "00:00:00"
+        Label3.Text = "00-00.0000"
+    End Sub
+
+
+    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
+        Label1.Text = TimeString '12 hours timw
+        Label1.Text = DateTime.Now.ToString("hh:mm:ss tt")
+        Label2.Text = DateTime.Now.ToString("dd-MM-yyyy")
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Timer1.Start()
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        Timer1.Stop()
+        Label1.Text = "00:00:0"
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        Timer1.Stop()
+    End Sub
+End Class
+
+
