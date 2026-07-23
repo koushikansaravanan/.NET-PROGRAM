@@ -189,3 +189,49 @@ Public Class Form1
 End Class
 
 
+**employee account**
+
+Public Class Form1
+    Dim eid() As Integer = {101, 102, 103}
+    Dim ename() As String = {"Ravi", "Priya", "Arun"}
+    Dim basic() As Integer = {20000, 25000, 30000}
+    Dim hra() As Integer = {5000, 6000, 7000}
+    Dim index As Integer = 0
+    Private Sub DisplayData()
+        txtEID.Text = eid(index)
+        txtName.Text = ename(index)
+        txtBasic.Text = basic(index)
+        txtHRA.Text = hra(index)
+        txtNet.Text = basic(index) + hra(index)
+    End Sub
+    Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+        DisplayData()
+    End Sub
+
+    Private Sub btnFirst_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFirst.Click
+        index = 0
+        DisplayData()
+    End Sub
+
+    Private Sub btnLast_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLast.Click
+         index = eid.Length - 1
+        DisplayData()
+    End Sub
+
+    Private Sub btnNext_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNext.Click
+        If index < eid.Length - 1 Then
+            index += 1
+            DisplayData()
+        End If
+    End Sub
+
+    Private Sub btnPrevious_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPrevious.Click
+        If index > 0 Then
+            index -= 1
+            DisplayData()
+        End If
+    End Sub
+End Class
+
+
+
